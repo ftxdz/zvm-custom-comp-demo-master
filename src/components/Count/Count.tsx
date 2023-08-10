@@ -11,7 +11,7 @@ export function Count() {
     const myChart = echarts.init(chartRef.current);
     myChart.setOption({
       title: {
-        text: "ECharts实例组件",
+        text: "EChartsshili示例组件",
       },
       tooltip: {},
       xAxis: {
