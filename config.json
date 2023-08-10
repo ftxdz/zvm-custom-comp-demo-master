@@ -1,0 +1,10 @@
+{
+  "customComponentItems": {
+    "Count": {
+      "name": "Count",
+      "imagePath": "preview/count.jpeg",
+      "description": "test description, test description, test description"
+    }
+  },
+  "version": "1.0.1"
+}
