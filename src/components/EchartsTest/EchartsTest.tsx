@@ -3,30 +3,46 @@ import { useEffect, useRef } from "react";
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import * as echarts from "echarts";
+import util from "/md_frame/util/index.js"
 
-export function EchartsTest() {
+export function  EchartsTest() {
   // const [count, setCount] = useState(0)
   const chartRef: any = useRef(); //拿到DOM容器
   useEffect(() => {
-    const myChart = echarts.init(chartRef.current);
-    myChart.setOption({
-      title: {
-        text: "EChartsshili示例组件",
-      },
-      tooltip: {},
-      xAxis: {
-        data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-      },
-      yAxis: {},
-      series: [
-        {
-          name: "销量",
-          type: "bar",
-          data: [5, 20, 36, 10, 10, 20],
+    let xAxis:object = {
+      data:[]
+    }
+    let data:any = []
+    util.query({
+      limit: 0,
+      model: "user",
+      field_string: `id username nickname sex assets_aggregate{ aggregate{ count } }`,
+    }).then((res:any)=>{
+      console.log(res)
+      res.map((item)=>{
+        xAxis.data.push(item.nickname)
+        data.push(item.assets_aggregate.aggregate.count)
+      })
+      const myChart = echarts.init(chartRef.current);
+      myChart.setOption({
+        title: {
+          text: "Zion 自定义组件",
         },
-      ],
-    });
+        tooltip: {},
+        xAxis,
+        yAxis: {},
+        series: [
+          {
+            name: "权益数",
+            type: "bar",
+            data,
+          },
+        ],
+      });
+    })
+
   });
+
   return (
     <>
       {/* <div>
