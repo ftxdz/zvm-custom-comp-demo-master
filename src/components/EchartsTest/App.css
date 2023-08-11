@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2px;
   text-align: center;
 }
 
@@ -42,6 +42,6 @@
 }
 
 .chart{
-  width: 1000px;
-  height: 1000px;
+  width: 500px;
+  height: 500px;
 }
