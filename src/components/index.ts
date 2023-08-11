@@ -1,3 +1,3 @@
-import { Count } from './Count';
+import { EchartsTest } from './EchartsTest';
 
-export default { Count };
+export default { EchartsTest };

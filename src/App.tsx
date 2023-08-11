@@ -1,11 +1,11 @@
-import { Count } from './components/Count';
+import { EchartsTest } from './components/EchartsTest';
 import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
-        <Count  />
+        <EchartsTest  />
     </BrowserRouter>
   );
 }

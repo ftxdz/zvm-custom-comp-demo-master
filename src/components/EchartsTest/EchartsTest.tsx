@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import "./App.css";
 import * as echarts from "echarts";
 
-export function Count() {
+export function EchartsTest() {
   // const [count, setCount] = useState(0)
   const chartRef: any = useRef(); //拿到DOM容器
   useEffect(() => {

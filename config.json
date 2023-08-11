@@ -1,10 +1,10 @@
 {
   "customComponentItems": {
-    "Count": {
-      "name": "Count",
+    "EchartsTest": {
+      "name": "EchartsTest",
       "imagePath": "preview/count.jpeg",
-      "description": "test description, test description, test description"
+      "description": "test EchartsTest, test EchartsTest, test EchartsTest"
     }
   },
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
