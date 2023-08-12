@@ -3,43 +3,64 @@ import { useEffect, useRef } from "react";
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import * as echarts from "echarts";
-import util from "./md_frame/util"
+
+import util from "./md_frame/util/index.js"
 
 export function  EchartsTest() {
   // const [count, setCount] = useState(0)
   const chartRef: any = useRef(); //拿到DOM容器
   useEffect(() => {
-    let xAxis:object = {
-      data:[]
-    }
-    let data:any = []
-    util.query({
-      limit: 0,
-      model: "user",
-      field_string: `id username nickname sex assets_aggregate{ aggregate{ count } }`,
-    }).then((res:any)=>{
-      console.log(res)
-      res.map((item)=>{
-        xAxis.data.push(item.nickname)
-        data.push(item.assets_aggregate.aggregate.count)
-      })
-      const myChart = echarts.init(chartRef.current);
-      myChart.setOption({
-        title: {
-          text: "Zion 自定义组件",
+    const myChart = echarts.init(chartRef.current);
+    myChart.setOption({
+      title: {
+        text: "Zion 自定义组件",
+      },
+      tooltip: {},
+      xAxis:{
+        data:["用户A","用户B","用户C","用户D"]
+      },
+      yAxis: {},
+      series: [
+        {
+          name: "正确数",
+          type: "bar",
+          data:[98,100,90,80],
         },
-        tooltip: {},
-        xAxis,
-        yAxis: {},
-        series: [
-          {
-            name: "权益数",
-            type: "bar",
-            data,
-          },
-        ],
-      });
-    })
+      ],
+    });
+    // let xAxis:object = {
+    //   data:[]
+    // }
+    // let data:any = []
+
+    // util.query({
+    //   limit: 0,
+    //   model: "user",
+    //   field_string: `id username nickname sex assets_aggregate{ aggregate{ count } }`,
+    // }).then((res:any)=>{
+    //   console.log(res)
+    //   res.map((item)=>{
+    //     xAxis.data.push(item.nickname)
+    //     data.push(item.assets_aggregate.aggregate.count)
+    //   })
+
+    //   const myChart = echarts.init(chartRef.current);
+    //   myChart.setOption({
+    //     title: {
+    //       text: "Zion 自定义组件",
+    //     },
+    //     tooltip: {},
+    //     xAxis,
+    //     yAxis: {},
+    //     series: [
+    //       {
+    //         name: "权益数",
+    //         type: "bar",
+    //         data,
+    //       },
+    //     ],
+    //   });
+    // })
 
   });
 
