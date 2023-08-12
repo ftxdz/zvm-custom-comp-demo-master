@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import "./App.css";
 import * as echarts from "echarts";
 
-import util from "./md_frame/util/index.js"
+// import util from "./md_frame/util/index.js"
 
 export function  EchartsTest() {
   // const [count, setCount] = useState(0)
