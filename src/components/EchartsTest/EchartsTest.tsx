@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import * as echarts from "echarts";
-import util from "../../md_frame/util"
+import util from "./md_frame/util"
 
 export function  EchartsTest() {
   // const [count, setCount] = useState(0)
