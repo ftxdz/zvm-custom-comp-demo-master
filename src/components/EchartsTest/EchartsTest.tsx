@@ -9,7 +9,7 @@ export function  EchartsTest() {
   // const [count, setCount] = useState(0)
   const chartRef: any = useRef(); //拿到DOM容器
   useEffect(() => {
-    let xAxis:object = {
+    let xAxis:any = {
       data:[]
     }
     let data:any = []
@@ -20,7 +20,7 @@ export function  EchartsTest() {
       field_string: `id username nickname sex assets_aggregate{ aggregate{ count } }`,
     }).then((res:any)=>{
       console.log(res)
-      res.map((item)=>{
+      res.map((item:any)=>{
         xAxis.data.push(item.nickname)
         data.push(item.assets_aggregate.aggregate.count)
       })
