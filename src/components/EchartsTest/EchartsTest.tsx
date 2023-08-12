@@ -16,13 +16,13 @@ export function  EchartsTest() {
 
     util.query({
       limit: 0,
-      model: "user",
-      field_string: `id username nickname sex assets_aggregate{ aggregate{ count } }`,
+      model: "order",
+      field_string: `id goodsname count`,
     }).then((res:any)=>{
       console.log(res)
       res.map((item:any)=>{
-        xAxis.data.push(item.nickname)
-        data.push(item.assets_aggregate.aggregate.count)
+        xAxis.data.push(item.goodsname)
+        data.push(item.count)
       })
 
       const myChart = echarts.init(chartRef.current);
@@ -35,7 +35,7 @@ export function  EchartsTest() {
         yAxis: {},
         series: [
           {
-            name: "权益数",
+            name: "销量",
             type: "bar",
             data,
           },
