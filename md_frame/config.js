@@ -9,7 +9,7 @@ export default {
 	server_port: 3000,
 	server_root: "http://localhost",
 	// #ifdef MP-WEIXIN
-	env: "MP-WEIXIN", //1.MP-WEIXIN 2.H5
+	//env: "MP-WEIXIN", //1.MP-WEIXIN 2.H5
 	// #endif
 
 	// #ifdef H5
