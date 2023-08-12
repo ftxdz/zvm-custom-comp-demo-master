@@ -3,8 +3,7 @@ import { useEffect, useRef } from "react";
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import * as echarts from "echarts";
-
-// import util from "./md_frame/util/index.js"
+import util from "./md_frame/util/index.js"
 
 export function  EchartsTest() {
   // const [count, setCount] = useState(0)
@@ -28,6 +27,14 @@ export function  EchartsTest() {
         },
       ],
     });
+    // console.log(util)
+    util.query({
+      limit: 0,
+      model: "user",
+      field_string: `id username nickname sex assets_aggregate{ aggregate{ count } }`,
+    }).then((res:any)=>{
+      console.log(res)
+    })
     // let xAxis:object = {
     //   data:[]
     // }
